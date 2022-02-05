@@ -7,6 +7,14 @@
 
 
 class Program {
+
+public:
+    Program(int numArith, int numStore, int numLoad, int numBranch);
+    Program(int numTotal, double numArith, double numStore, double numLoad);
+
+    void printStats();
+
+private:
     // number of instructions per instruction class stored here
     int numArith; // arithmetic and logic calculations
     int numStore; // store data into memory

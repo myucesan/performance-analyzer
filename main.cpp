@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Computer.h"
+#include "Program.h"
 
 
 /*
@@ -7,13 +8,9 @@
  * C++ Assignment 1.1
  */
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    Computer c1(1,1,1,1,1);
-    Computer c2(2,2,2,2,2);
-    c1.printStats();
-    std::cout << "Global CPI of Computer 1: " << c1.calculateGlobalCPI() << "\n";
-    c2.printStats();
-    std::cout <<  "Global CPI of Computer 2: " <<c2.calculateGlobalCPI() << "\n";
-
+//    Program p1(1,2,3,4);
+//    p1.printStats();
+    Program p2(100, double(39/100), double(21/100), double(8/100));
+    p2.printStats();
     return 0;
 }
