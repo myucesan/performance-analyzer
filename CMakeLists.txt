@@ -3,4 +3,4 @@ project(performance_analyzer)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(performance_analyzer main.cpp Computer.cpp Computer.h)
+add_executable(performance_analyzer main.cpp Computer.cpp Computer.h Program.cpp Program.h)
