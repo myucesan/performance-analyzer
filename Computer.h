@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "Program.h"
+#include <complex>
 
 class Computer {
 
@@ -29,7 +30,18 @@ public:
     double calculateGlobalCPI(); // add all the CPI values
     double calculateExecutionTime (Program);
     double calculateMIPS (void);
-    double calculateMips(Program);
+    double calculateMIPS(Program);
+
+    double getClockRateGhz() const;
+
+    double getCpiArith() const;
+
+    double getCpiStore() const;
+
+    double getCpiLoad() const;
+
+    double getCpiBranch() const;
+
 
 
 private:

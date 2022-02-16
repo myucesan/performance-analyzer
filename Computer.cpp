@@ -22,15 +22,52 @@ double Computer::calculateGlobalCPI() {
     return this->cpiArith + this->cpiStore + this->cpiLoad + this->cpiBranch;
 }
 
-double calculateExecutionTime (Program p) {
-    // todo 1.3
+double Computer::getClockRateGhz() const {
+    return clockRateGhz;
+}
+
+double Computer::getCpiArith() const {
+    return cpiArith;
+}
+
+double Computer::getCpiStore() const {
+    return cpiStore;
+}
+
+double Computer::getCpiLoad() const {
+    return cpiLoad;
+}
+
+double Computer::getCpiBranch() const {
+    return cpiBranch;
+}
+
+double Computer::calculateExecutionTime (Program p) {
     // Cpu/execution time = (instruction count * CPI / clock rate)
-//    double arithExecutionTime = p.getNumArith() */
-    return 0;
+    double clockRate =  getClockRateGhz() * std::pow(10, 9);
+    double arithExecutionTime = (p.getNumArith() * getCpiArith()) / clockRate;
+    double storeExecutionTime = (p.getNumStore() * getCpiStore()) / clockRate;
+    double loadExecutionTime = (p.getNumLoad() * getCpiLoad()) / clockRate;
+    double branchExecutionTime = (p.getNumBranch() * getCpiBranch()) / clockRate;
+    return (arithExecutionTime + storeExecutionTime + loadExecutionTime + branchExecutionTime);
 }
-double calculateMIPS (void) {
-// todo 1.3
+double Computer::calculateMIPS (void) {
+// clock rate / (CPI 8 10^6)
+
+double clockRate = getClockRateGhz() * std::pow(10, 9);
+double mipsArith  = clockRate / getCpiArith() * std::pow(10, 6);
+double mipsStore  = clockRate / getCpiStore() * std::pow(10, 6);
+double mipsLoad  = clockRate / getCpiLoad() * std::pow(10, 6);
+double mipsBranch  = clockRate / getCpiBranch() * std::pow(10, 6);
+
+return mipsArith + mipsStore + mipsLoad + mipsBranch;
+
 }
-double calculateMips(Program) {
+double Computer::calculateMIPS(Program p) {
     // todo 1.3
+    // instruction count / (execution time * 10^6)
+    double executionTime = this->calculateExecutionTime(p);
+    double instructionCount = p.getNumTotal();
+    return instructionCount/(executionTime * std::pow(10, 6));
+
 }

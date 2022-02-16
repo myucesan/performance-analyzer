@@ -14,6 +14,10 @@ int main() {
     Program A(2000, 100, 100, 50);
     Program B(2000, 10.0/100.0, 40.0/100.0, 25.0/100.0);
     Program C(500, 100, 2000, 200);
+    std::cout << c1.calculateExecutionTime(A) << "\n";
+    std::cout << c1.calculateMIPS() << "\n";
+    std::cout << c1.calculateMIPS(A) << "\n ";
+
 
     return 0;
 }
