@@ -23,8 +23,9 @@ void Program::printStats() {
 }
 
 Program::Program(int numTotal, double numArith, double numStore, double numLoad) {
-    this->numArith = numTotal * numArith;
-    this->numStore = numTotal *numStore;
-    this->numLoad = numLoad * numLoad;
-    this->numBranch = this->numTotal * (100/100 - (numArith + numStore + numLoad));
+    this->numTotal = numTotal;
+    this->numArith = this->numTotal * numArith;
+    this->numStore = this->numTotal *numStore;
+    this->numLoad = this->numTotal * numLoad;
+    this->numBranch = this->numTotal - (this->numArith + this->numStore + this->numLoad);
 }
