@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+#include "Program.h"
 
 class Computer {
 
@@ -26,6 +27,9 @@ public:
     Computer(double clockRateGhz, double cpiArith, double cpiStore, double cpiLoad, double cpiBranch);
     void printStats();
     double calculateGlobalCPI(); // add all the CPI values
+    double calculateExecutionTime (Program);
+    double calculateMIPS (void);
+    double calculateMips(Program);
 
 
 private:

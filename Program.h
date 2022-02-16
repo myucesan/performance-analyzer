@@ -14,6 +14,16 @@ public:
 
     void printStats();
 
+    int getNumArith() const;
+
+    int getNumStore() const;
+
+    int getNumLoad() const;
+
+    int getNumBranch() const;
+
+    int getNumTotal() const;
+
 private:
     // number of instructions per instruction class stored here
     int numArith; // arithmetic and logic calculations

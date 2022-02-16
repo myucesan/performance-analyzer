@@ -5,12 +5,15 @@
 
 /*
  * Course: Computer Architecture & Design
- * C++ Assignment 1.1
+ * C++ Assignment 1.3
  */
 int main() {
-    Program p1(1,2,3,4);
-    p1.printStats();
-    Program p2(100, 39.0/100.0, 21.0/100.0, 8.0/100.0);
-    p2.printStats();
+    Computer c1(1, 2, 2, 3, 4);
+    Computer c2(1.2, 2, 3, 4, 3);
+    Computer c3(2, 2, 2, 4, 6);
+    Program A(2000, 100, 100, 50);
+    Program B(2000, 10.0/100.0, 40.0/100.0, 25.0/100.0);
+    Program C(500, 100, 2000, 200);
+
     return 0;
 }

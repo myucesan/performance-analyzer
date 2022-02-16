@@ -29,3 +29,23 @@ Program::Program(int numTotal, double numArith, double numStore, double numLoad)
     this->numLoad = this->numTotal * numLoad;
     this->numBranch = this->numTotal - (this->numArith + this->numStore + this->numLoad);
 }
+
+int Program::getNumArith() const {
+    return numArith;
+}
+
+int Program::getNumStore() const {
+    return numStore;
+}
+
+int Program::getNumLoad() const {
+    return numLoad;
+}
+
+int Program::getNumBranch() const {
+    return numBranch;
+}
+
+int Program::getNumTotal() const {
+    return numTotal;
+}

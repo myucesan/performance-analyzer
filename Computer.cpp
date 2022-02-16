@@ -21,3 +21,16 @@ void Computer::printStats() {
 double Computer::calculateGlobalCPI() {
     return this->cpiArith + this->cpiStore + this->cpiLoad + this->cpiBranch;
 }
+
+double calculateExecutionTime (Program p) {
+    // todo 1.3
+    // Cpu/execution time = (instruction count * CPI / clock rate)
+//    double arithExecutionTime = p.getNumArith() */
+    return 0;
+}
+double calculateMIPS (void) {
+// todo 1.3
+}
+double calculateMips(Program) {
+    // todo 1.3
+}
